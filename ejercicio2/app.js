@@ -56,4 +56,23 @@ removeElements.forEach(element => {
 
 // 2.8 Inserta una p con el texto 'Voy en medio!' entre los dos div. Recuerda que no solo puedes insertar elementos con .appendChild.
 
+const betweenP = document.createElement("p");
+betweenP.innerText = "Voy en medio!";
+
+const basicDivs = document.getElementsByTagName("div"); 
+if (basicDivs.length >= 2) {
+    basicDivs[0].parentNode.insertBefore(betweenP, basicDivs[1]);
+}
+
 // 2.9 Inserta p con el texto 'Voy dentro!', dentro de todos los div con la clase .fn-insert-here
+
+const insertDivs = document.querySelectorAll(".fn-insert-here");
+
+for (const div of insertDivs) {
+    const insideP = document.createElement("p");
+    insideP.innerText = "Voy dentro!";
+    div.appendChild(insideP);
+}
+
+
+
